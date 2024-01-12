@@ -57,10 +57,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fetchWeatherData(location: String) {
-        val retrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://api.openweathermap.org/data/2.5/")
-            .build().create(ApiInterface::class.java)
+        val retrofit = Retrofit.Builder().addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("https://api.openweathermap.org/data/2.5/").build()
+            .create(ApiInterface::class.java)
         val response =
             retrofit.getweatherData(location, "2256af0cbd5e9207e761d4139c2fd180", "matric")
         response.enqueue(object : Callback<weatherapp> {
@@ -151,3 +150,5 @@ class MainActivity : AppCompatActivity() {
         return sdf.format((Date()))
     }
 }
+
+
