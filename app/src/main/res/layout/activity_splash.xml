@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/splashscreen"
     tools:context=".splashActivity">
 
     <ImageView
@@ -17,12 +17,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="280dp"
+        android:layout_height="263dp"
+        android:layout_marginTop="120dp"
+        android:id="@+id/animationhome"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:lottie_rawRes="@raw/home2" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="88dp"
         android:fontFamily="@font/font"
         android:text="Weather Matters\n We've Got the Details "
         android:textAlignment="center"
@@ -37,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/terror_font"
-        android:text="Designed by \n RUNTIME TERROR"
+        android:text="Designed by \n CODA CRAFTS"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"

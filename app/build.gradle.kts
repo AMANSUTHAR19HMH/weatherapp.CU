@@ -4,14 +4,14 @@ plugins {
 }
 
 android {
-    namespace = "com.aman.weatherappaman"
+    namespace = "com.amn.weatherappaman"
     compileSdk = 34
     buildFeatures {
         viewBinding = true
     }
 
     defaultConfig {
-        applicationId = "com.aman.weatherappaman"
+        applicationId = "com.amn.weatherappaman"
         minSdk = 19
         multiDexEnabled=true
         targetSdk = 33
