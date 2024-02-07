@@ -4,7 +4,6 @@ package com.amn.weatherappaman
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.SearchView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.amn.weatherappaman.databinding.ActivityMainBinding
 import retrofit2.Call
@@ -119,7 +118,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             "Smoke" -> {
-                binding.root.setBackgroundResource(R.drawable.heavyrain)
+//                binding.root.setBackgroundResource(R.drawable.heavyrain)
+                binding.root.setBackgroundResource(R.drawable.cloudy_background)
                 binding.lottieAnimationView.setAnimation(R.raw.rainningani)
             }
 
@@ -184,7 +184,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             "Haze" -> {
-                binding.root.setBackgroundResource(R.drawable.hazeback)
+                binding.root.setBackgroundResource(R.drawable.cloudy_background)
                 binding.lottieAnimationView.setAnimation(R.raw.animationhaze)
             }
 
@@ -197,7 +197,7 @@ class MainActivity : AppCompatActivity() {
         binding.lottieAnimationView.playAnimation()
     }
 
-    private fun date(): String {
+  /*  private fun date(): String {
         val currentDate = Date()
         val sdf = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
         val formattedDate = sdf.format(currentDate)
@@ -214,9 +214,9 @@ class MainActivity : AppCompatActivity() {
         dayOfYearTextView.text = dayOfYearText
 
         return formattedDate
-    }
+    }*/
 
-    /* private fun date(): String {
+     private fun date(): String {
          val currentDate = Date()
          val sdf = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
          val formattedDate = sdf.format(currentDate)
@@ -226,7 +226,7 @@ class MainActivity : AppCompatActivity() {
          }.get(Calendar.DAY_OF_YEAR)
 
          return "$formattedDate, Day $dayOfYear"
-     }*/
+     }
 
     private fun time(timestamp: Long): String {
         val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
