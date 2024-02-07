@@ -4,6 +4,7 @@ package com.amn.weatherappaman
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.SearchView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.amn.weatherappaman.databinding.ActivityMainBinding
 import retrofit2.Call
@@ -12,6 +13,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 import kotlin.math.roundToInt
@@ -196,9 +198,35 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun date(): String {
-        val sdf = SimpleDateFormat("DD MMMM yyyy", Locale.getDefault())
-        return sdf.format((Date()))
+        val currentDate = Date()
+        val sdf = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+        val formattedDate = sdf.format(currentDate)
+
+        val dayOfYear = Calendar.getInstance().apply {
+            time = currentDate
+        }.get(Calendar.DAY_OF_YEAR)
+
+        val dayOfYearText = "Day $dayOfYear"
+
+        // Find the TextView
+        val dayOfYearTextView = findViewById<TextView>(R.id.dayOfYearTextView)
+        // Set the text
+        dayOfYearTextView.text = dayOfYearText
+
+        return formattedDate
     }
+
+    /* private fun date(): String {
+         val currentDate = Date()
+         val sdf = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+         val formattedDate = sdf.format(currentDate)
+
+         val dayOfYear = Calendar.getInstance().apply {
+             time = currentDate
+         }.get(Calendar.DAY_OF_YEAR)
+
+         return "$formattedDate, Day $dayOfYear"
+     }*/
 
     private fun time(timestamp: Long): String {
         val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
