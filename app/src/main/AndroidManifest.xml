@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET">
 
     </uses-permission>
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
 
     </uses-permission>
@@ -38,6 +39,10 @@
             android:exported="true">
 
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

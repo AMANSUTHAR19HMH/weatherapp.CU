@@ -1,7 +1,6 @@
 package com.amn.weatherappaman
 
 
-import android.animation.Animator
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -23,10 +22,9 @@ class splashActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_splash)
 
-        lottieAnimationView = findViewById(R.id.animationhome)
 
         // Optional: You can add an animation listener to perform actions when the animation completes
-        lottieAnimationView.addAnimatorListener(object : Animator.AnimatorListener {
+    /*    lottieAnimationView.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(animation: Animator) {}
 
             override fun onAnimationEnd(animation: Animator) {
@@ -37,7 +35,7 @@ class splashActivity : AppCompatActivity() {
             override fun onAnimationCancel(animation: Animator) {}
 
             override fun onAnimationRepeat(animation: Animator) {}
-        })
+        })*/
 
         // Your existing Handler code
         Handler(Looper.getMainLooper()).postDelayed(

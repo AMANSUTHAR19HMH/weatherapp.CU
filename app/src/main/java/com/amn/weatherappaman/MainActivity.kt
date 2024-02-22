@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.amn.weatherappaman.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
         setContentView(binding.root)
-        fetchWeatherData("hanumangarh")
+        fetchWeatherData("Delhi")
         SearchCity()
     }
 
@@ -186,6 +187,7 @@ class MainActivity : AppCompatActivity() {
             "Haze" -> {
                 binding.root.setBackgroundResource(R.drawable.cloudy_background)
                 binding.lottieAnimationView.setAnimation(R.raw.animationhaze)
+                binding.date.setTextColor(ContextCompat.getColor(this, R.color.white))
             }
 
             else -> {
@@ -197,7 +199,26 @@ class MainActivity : AppCompatActivity() {
         binding.lottieAnimationView.playAnimation()
     }
 
-  /*  private fun date(): String {
+    /*  private fun date(): String {
+          val currentDate = Date()
+          val sdf = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+          val formattedDate = sdf.format(currentDate)
+
+          val dayOfYear = Calendar.getInstance().apply {
+              time = currentDate
+          }.get(Calendar.DAY_OF_YEAR)
+
+          val dayOfYearText = "Day $dayOfYear"
+
+          // Find the TextView
+          val dayOfYearTextView = findViewById<TextView>(R.id.dayOfYearTextView)
+          // Set the text
+          dayOfYearTextView.text = dayOfYearText
+
+          return formattedDate
+      }*/
+
+    private fun date(): String {
         val currentDate = Date()
         val sdf = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
         val formattedDate = sdf.format(currentDate)
@@ -206,27 +227,8 @@ class MainActivity : AppCompatActivity() {
             time = currentDate
         }.get(Calendar.DAY_OF_YEAR)
 
-        val dayOfYearText = "Day $dayOfYear"
-
-        // Find the TextView
-        val dayOfYearTextView = findViewById<TextView>(R.id.dayOfYearTextView)
-        // Set the text
-        dayOfYearTextView.text = dayOfYearText
-
-        return formattedDate
-    }*/
-
-     private fun date(): String {
-         val currentDate = Date()
-         val sdf = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
-         val formattedDate = sdf.format(currentDate)
-
-         val dayOfYear = Calendar.getInstance().apply {
-             time = currentDate
-         }.get(Calendar.DAY_OF_YEAR)
-
-         return "$formattedDate, Day $dayOfYear"
-     }
+        return "$formattedDate, Day $dayOfYear"
+    }
 
     private fun time(timestamp: Long): String {
         val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
@@ -238,5 +240,3 @@ class MainActivity : AppCompatActivity() {
         return sdf.format((Date()))
     }
 }
-
-
