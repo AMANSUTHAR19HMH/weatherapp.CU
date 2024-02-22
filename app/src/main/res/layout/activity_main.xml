@@ -167,6 +167,7 @@
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:layout_marginStart="16dp"
+            android:id="@+id/frame"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/backgroundshape"
@@ -176,12 +177,14 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="238dp">
 
                 <androidx.constraintlayout.helper.widget.Flow
                     android:id="@+id/flow"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
                     android:orientation="horizontal"
                     app:constraint_referenced_ids="linearLayout,linearLayout2,linearLayout3,linearLayout4,linearLayout5,linearLayout6"
                     app:flow_maxElementsWrap="3"
@@ -297,10 +300,12 @@
                         android:textSize="10sp" />
                 </LinearLayout>
 
+
                 <LinearLayout
                     android:id="@+id/linearLayout4"
                     android:layout_width="80dp"
                     android:layout_height="88dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/backgroundshape"
                     android:foregroundGravity="center"
                     android:gravity="center"
@@ -405,6 +410,22 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </FrameLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center_vertical"
+            android:text="calander"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/cal"
+            android:id="@+id/calanderbtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/car_ui_scrollbar_margin"
+            app:layout_constraintTop_toBottomOf="@+id/frame" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
