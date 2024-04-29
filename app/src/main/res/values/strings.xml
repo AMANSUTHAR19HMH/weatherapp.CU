@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Weather App</string>
+    <string name="APPID">ca-app-pub-6121119267892092~1028073180</string>
+    <string name="BANNERADDS">ca-app-pub-6121119267892092/6338473130</string>
 </resources>

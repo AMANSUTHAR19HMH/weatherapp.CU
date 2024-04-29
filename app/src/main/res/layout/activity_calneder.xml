@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/gradient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".calneder">
 
 
@@ -13,17 +13,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:textStyle="bold"
         android:layout_marginBottom="5dp"
         android:autoSizeTextType="uniform"
         android:foregroundGravity="center_vertical"
         android:gravity="center_horizontal"
-
         android:selectAllOnFocus="true"
+
         android:text="calender"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="40dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/calender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +44,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adview"
+        android:layout_width="315dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-4681171705756049/9153721629"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

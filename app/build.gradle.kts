@@ -4,16 +4,16 @@ plugins {
 }
 
 android {
-    namespace = "com.amn.weatherappaman"
+    namespace = "com.codacrafts.weathergappaman"
     compileSdk = 34
     buildFeatures {
         viewBinding = true
     }
 
     defaultConfig {
-        applicationId = "com.amn.weatherappaman"
+        applicationId = "com.codacrafts.weathergapp"
         minSdk = 28
-        multiDexEnabled=true
+        multiDexEnabled = true
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -37,6 +37,19 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+//    buildscript {
+//        repositories {
+//            google()
+//            mavenCentral()
+//        }
+//    }
+
+//    allprojects {
+//        repositories {
+//            google()
+//            mavenCentral()
+//        }
+//    }
 }
 
 dependencies {
@@ -55,6 +68,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
 
+    implementation("com.google.android.gms:play-services-ads:23.0.0")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
